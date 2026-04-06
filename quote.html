@@ -74,10 +74,19 @@ button.loading .spinner{display:inline-block}
   box-shadow:0 0 15px rgba(37,99,235,0.6);
 }
 
+/* Desktop phone number (added) */
+.phone-text{
+  margin-top:10px;
+  color:#cbd5f5;
+}
+
 /* Show only on mobile */
 @media(max-width:768px){
   .call-btn{
     display:inline-block;
+  }
+  .phone-text{
+    display:none;
   }
 }
 </style>
@@ -95,7 +104,13 @@ button.loading .spinner{display:inline-block}
 
 <div class="box">
 <h3>Phone</h3>
+
+<!-- ✅ Desktop number -->
+<p class="phone-text">07404 930763</p>
+
+<!-- ✅ Mobile button -->
 <a href="tel:+447404930763" class="call-btn">📞 Tap to Call</a>
+
 </div>
 
 <div class="box">
