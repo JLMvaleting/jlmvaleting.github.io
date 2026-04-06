@@ -40,9 +40,10 @@ display:flex;gap:20px;font-size:13px;color:#cbd5f5
 .hero{
 height:100vh;
 background:url("hero.jpg") center/cover no-repeat;
+background-position: 20% center; /* desktop */
 display:flex;align-items:center;padding:0 8%;
 margin-top:70px;
-padding-top:120px; /* ✅ FIX */
+padding-top:120px;
 position:relative;
 }
 
@@ -198,7 +199,7 @@ color:#94a3b8;
 font-size:14px;
 }
 
-/* ✅ MOBILE FIX (SAFE) */
+/* ✅ MOBILE FIX */
 @media(max-width:768px){
 
 header{
@@ -224,7 +225,8 @@ margin-top:8px;
 }
 
 .hero{
-padding-top:180px; /* KEY FIX */
+padding-top:180px;
+background-position: 10% center; /* ✅ mobile tweak for better framing */
 }
 
 .hero-title{
