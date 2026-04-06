@@ -12,7 +12,6 @@ body{margin:0;font-family:'Inter',sans-serif;background:#020617;color:#fff;displ
 
 .left{padding:50px}
 
-/* ✅ 3: Improved heading */
 .left h1{
   font-size:42px;
   font-weight:700;
@@ -22,7 +21,6 @@ body{margin:0;font-family:'Inter',sans-serif;background:#020617;color:#fff;displ
 
 .left p{color:#cbd5f5}
 
-/* ✅ 4 + 7: Glass effect + hover animation */
 .box{
   background:rgba(2,6,23,0.7);
   backdrop-filter:blur(10px);
@@ -46,7 +44,7 @@ body{margin:0;font-family:'Inter',sans-serif;background:#020617;color:#fff;displ
 input, textarea{
   width:100%;
   padding:14px;
-  margin-bottom:15px;
+  margin-bottom:10px;
   border:none;
   border-radius:10px;
   background:#020617;
@@ -54,12 +52,20 @@ input, textarea{
   outline:none;
 }
 
-/* ✅ Smooth animated textarea */
+/* Smooth textarea */
 textarea{
   resize:none;
   min-height:120px;
   overflow:hidden;
-  transition:height 0.2s ease;
+  transition:height 0.2s ease, opacity 0.2s ease;
+}
+
+/* Character counter */
+.char-count{
+  font-size:12px;
+  color:#94a3b8;
+  text-align:right;
+  margin-bottom:10px;
 }
 
 input:focus, textarea:focus{border:1px solid #2563eb}
@@ -80,7 +86,7 @@ button.loading .spinner{display:inline-block}
 
 @media(max-width:768px){.container{grid-template-columns:1fr}}
 
-/* WhatsApp button styling */
+/* WhatsApp */
 .whatsapp-btn{
   display:inline-block;
   background:#25D366;
@@ -98,7 +104,7 @@ button.loading .spinner{display:inline-block}
   box-shadow:0 0 15px rgba(37,211,102,0.6);
 }
 
-/* Call button styling */
+/* Call */
 .call-btn{
   display:none;
   background:#2563eb;
@@ -116,20 +122,14 @@ button.loading .spinner{display:inline-block}
   box-shadow:0 0 15px rgba(37,99,235,0.6);
 }
 
-/* Desktop phone number */
 .phone-text{
   margin-top:10px;
   color:#cbd5f5;
 }
 
-/* Show only on mobile */
 @media(max-width:768px){
-  .call-btn{
-    display:inline-block;
-  }
-  .phone-text{
-    display:none;
-  }
+  .call-btn{display:inline-block;}
+  .phone-text{display:none;}
 }
 </style>
 </head>
@@ -146,11 +146,8 @@ button.loading .spinner{display:inline-block}
 
 <div class="box">
 <h3>Phone</h3>
-
 <p class="phone-text">07404 930763</p>
-
 <a href="tel:+447404930763" class="call-btn">📞 Tap to Call</a>
-
 </div>
 
 <div class="box">
@@ -169,21 +166,14 @@ button.loading .spinner{display:inline-block}
 <input type="hidden" name="access_key" value="d06c7535-b6cf-427d-b38e-4846f6e1a002">
 
 <input type="text" name="name" placeholder="Name" required>
-<span></span>
-
 <input type="email" name="email" placeholder="Email" required>
-<span></span>
-
 <input type="text" name="phone" placeholder="Phone Number">
-
 <input type="text" name="address" placeholder="Address">
-
 <input type="text" name="postcode" placeholder="Postcode">  
-  
 <input type="text" name="vehicle" placeholder="Vehicle Make & Model">
 
-<textarea name="message" placeholder="Your Message"></textarea>
-<span></span>
+<textarea id="message" name="message" placeholder="Describe what you'd like done..." maxlength="500"></textarea>
+<div class="char-count" id="charCount">0 / 500</div>
 
 <input type="hidden" name="subject" value="New Quote Request - JLM Valeting">
 
@@ -207,16 +197,25 @@ const btn = document.querySelector("button");
 const successMsg = document.querySelector(".success");
 const errorMsg = document.querySelector(".error");
 
-/* Back button fix */
 window.addEventListener("pageshow", function(){
   document.body.style.opacity = "1";
 });
 
-/* ✅ Smooth auto-expand */
-const textarea = document.querySelector("textarea");
+const textarea = document.getElementById("message");
+const charCount = document.getElementById("charCount");
+
+/* Auto expand + counter + placeholder fade */
 textarea.addEventListener("input", function(){
   this.style.height = "auto";
   this.style.height = this.scrollHeight + "px";
+
+  charCount.textContent = `${this.value.length} / 500`;
+
+  if(this.value.length > 0){
+    this.style.opacity = "0.95";
+  } else {
+    this.style.opacity = "1";
+  }
 });
 
 form.addEventListener("submit", async function(e) {
@@ -240,6 +239,7 @@ form.addEventListener("submit", async function(e) {
     errorMsg.textContent = "";
     form.reset();
     textarea.style.height = "120px";
+    charCount.textContent = "0 / 500";
   } else {
     errorMsg.textContent = "Something went wrong. Please try again.";
   }
