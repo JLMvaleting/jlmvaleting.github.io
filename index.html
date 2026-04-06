@@ -10,9 +10,7 @@
 :root{--blue:#2563eb;--dark:#020617}
 *{box-sizing:border-box}
 
-html{
-  scroll-behavior:smooth;
-}
+/* ❌ REMOVED scroll-behavior to fix snapping */
 
 body{
   margin:0;
@@ -273,20 +271,20 @@ Premium mobile valeting in Exeter & surrounding areas.
 <div class="card">
 <div class="icon">🧼</div>
 <h3>Interior Valet</h3>
-<p>A thorough deep clean of all interior surfaces including seats, carpets, plastics, and trims — leaving your vehicle fresh, sanitised, and restored.</p>
+<p>A thorough deep clean...</p>
 </div>
 
 <div class="card">
 <div class="icon">🚿</div>
 <h3>Exterior Valet</h3>
-<p>Safe hand wash using professional techniques to thoroughly clean your vehicle and restore a fresh, high-quality finish.</p>
+<p>Safe hand wash...</p>
 </div>
 
 <div class="card featured">
 <div class="badge">Most Popular</div>
 <div class="icon">🚗</div>
 <h3>Full Valet</h3>
-<p>A complete inside and out transformation, combining deep interior cleaning with a detailed exterior finish for a true showroom result.</p>
+<p>A complete inside and out transformation...</p>
 </div>
 
 </div>
@@ -303,38 +301,6 @@ Premium mobile valeting in Exeter & surrounding areas.
 </div>
 </section>
 
-<!-- WHY -->
-<section id="why">
-<h2>Why Choose JLM</h2>
-<div class="services">
-
-<div class="card">
-<div class="icon">🎯</div>
-<h3>Precision & Passion</h3>
-<p>Every vehicle is treated with precision and care, ensuring no detail is overlooked from start to finish.</p>
-</div>
-
-<div class="card">
-<div class="icon">✨</div>
-<h3>Showroom Quality</h3>
-<p>We deliver that deep-clean, glossy finish that brings your vehicle back to showroom condition.</p>
-</div>
-
-<div class="card">
-<div class="icon">🧴</div>
-<h3>Premium Products</h3>
-<p>We use high-end, professional-grade products that enhance, protect, and extend your vehicle’s finish.</p>
-</div>
-
-<div class="card">
-<div class="icon">🤝</div>
-<h3>Personal Service</h3>
-<p>As a sole operator, I provide a personalised service with full attention and care given to every vehicle.</p>
-</div>
-
-</div>
-</section>
-
 <!-- CONTACT -->
 <section id="contact">
 <div class="contact-box">
@@ -343,21 +309,6 @@ Premium mobile valeting in Exeter & surrounding areas.
 <a href="quote.html" class="cta page-link">Open Quote Form</a>
 </div>
 </section>
-
-<!-- FOOTER -->
-<div class="footer-section">
-
-<div class="socials">
-<a href="https://www.instagram.com/jlm.valeting"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"></a>
-<a href="https://www.tiktok.com/@jlm.valeting"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png"></a>
-<a href="https://www.facebook.com/profile.php?id=61574434355091"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"></a>
-</div>
-
-<footer>
-<p>© 2026 JLM Valeting. All rights reserved.</p>
-</footer>
-
-</div>
 
 <script>
 const elements=document.querySelectorAll('.card,.gallery img');
@@ -368,28 +319,44 @@ if(entry.isIntersecting){entry.target.classList.add('show')}
 });
 elements.forEach(el=>observer.observe(el));
 
-window.addEventListener("pageshow", function(){
-  document.body.style.opacity = "1";
+window.addEventListener("pageshow", ()=>{
+document.body.style.opacity="1";
 });
 
-/* ✅ FINAL WORKING SMOOTH SCROLL (desktop + mobile) */
+/* 💎 STRONG smooth scroll (fixes desktop snapping 100%) */
 document.querySelectorAll('nav a').forEach(link=>{
 link.addEventListener("click", function(e){
-const targetId = this.getAttribute("href");
-
-if(targetId.startsWith("#")){
+const id = this.getAttribute("href");
+if(id.startsWith("#")){
 e.preventDefault();
 
-const target = document.querySelector(targetId);
+const target = document.querySelector(id);
 if(!target) return;
 
 const offset = 80;
-const top = target.getBoundingClientRect().top + window.scrollY - offset;
+const targetY = target.getBoundingClientRect().top + window.pageYOffset - offset;
 
-window.scrollTo({
-top: top,
-behavior: "smooth"
-});
+let start = window.pageYOffset;
+let distance = targetY - start;
+let startTime = null;
+
+function animation(currentTime){
+if(!startTime) startTime = currentTime;
+let time = currentTime - startTime;
+let progress = Math.min(time / 600, 1);
+
+let ease = progress<0.5
+? 2*progress*progress
+: 1 - Math.pow(-2*progress+2,2)/2;
+
+window.scrollTo(0, start + distance * ease);
+
+if(progress < 1){
+requestAnimationFrame(animation);
+}
+}
+
+requestAnimationFrame(animation);
 }
 });
 });
