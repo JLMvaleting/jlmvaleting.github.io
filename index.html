@@ -195,153 +195,44 @@ text-align:center;
 color:#94a3b8;
 font-size:14px;
 }
+
+/* ✅ MOBILE HEADER FIX ADDED */
+@media(max-width:768px){
+
+  header{
+    flex-direction:column;
+    align-items:center;
+    padding:10px 15px;
+  }
+
+  .logo img{
+    height:55px;
+    margin-bottom:5px;
+  }
+
+  .top-info{
+    position:static;
+    transform:none;
+    flex-direction:column;
+    align-items:center;
+    gap:5px;
+    font-size:12px;
+    margin-bottom:5px;
+  }
+
+  nav{
+    margin-top:5px;
+  }
+
+  nav a{
+    margin:0 10px;
+    font-size:14px;
+  }
+
+  .hero{
+    margin-top:120px;
+  }
+
+}
 </style>
 </head>
-
-<body>
-
-<header>
-<div class="logo"><img src="logo.png"></div>
-<div class="top-info">
-<span>📧 contact@jlmvaleting.co.uk</span>
-<span>📍 Exeter, Devon</span>
-</div>
-<nav>
-<a href="#services">Services</a>
-<a href="#gallery">Gallery</a>
-<a href="#contact">Quote</a>
-</nav>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-<div class="hero-content">
-
-<h1 class="hero-title fade-up">
-Showroom Finish.<br>
-<span>Every Single Time.</span>
-</h1>
-
-<p class="hero-sub fade-up-delay">
-Premium mobile valeting in Exeter & surrounding areas.
-</p>
-
-<a href="quote.html" class="cta fade-up-delay2 page-link">Get a Quote Now</a>
-
-</div>
-</section>
-
-<!-- SERVICES -->
-<section id="services">
-<h2>Our Services</h2>
-<div class="services">
-
-<div class="card">
-<div class="icon">🧼</div>
-<h3>Interior Valet</h3>
-<p>A thorough deep clean of all interior surfaces including seats, carpets, plastics, and trims — leaving your vehicle fresh, sanitised, and restored.</p>
-</div>
-
-<div class="card">
-<div class="icon">🚿</div>
-<h3>Exterior Valet</h3>
-<p>Safe hand wash using professional techniques to thoroughly clean your vehicle and restore a fresh, high-quality finish.</p>
-</div>
-
-<div class="card featured">
-<div class="badge">Most Popular</div>
-<div class="icon">🚗</div>
-<h3>Full Valet</h3>
-<p>A complete inside and out transformation, combining deep interior cleaning with a detailed exterior finish for a true showroom result.</p>
-</div>
-
-</div>
-</section>
-
-<!-- GALLERY -->
-<section id="gallery">
-<h2>Previous Work</h2>
-<div class="gallery">
-<img src="IMG_9962.jpg">
-<img src="car2.jpg">
-<img src="car3.jpg">
-<img src="car4.jpg">
-</div>
-</section>
-
-<!-- WHY -->
-<section id="why">
-<h2>Why Choose JLM</h2>
-<div class="services">
-
-<div class="card">
-<div class="icon">🎯</div>
-<h3>Precision & Passion</h3>
-<p>Every vehicle is treated with precision and care, ensuring no detail is overlooked from start to finish.</p>
-</div>
-
-<div class="card">
-<div class="icon">✨</div>
-<h3>Showroom Quality</h3>
-<p>We deliver that deep-clean, glossy finish that brings your vehicle back to showroom condition.</p>
-</div>
-
-<div class="card">
-<div class="icon">🧴</div>
-<h3>Premium Products</h3>
-<p>We use high-end, professional-grade products that enhance, protect, and extend your vehicle’s finish.</p>
-</div>
-
-<div class="card">
-<div class="icon">🤝</div>
-<h3>Personal Service</h3>
-<p>As a sole operator, I provide a personalised service with full attention and care given to every vehicle.</p>
-</div>
-
-</div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-<div class="contact-box">
-<h2>Get a Quote</h2>
-<p>Click below to open full quote form</p>
-<a href="quote.html" class="cta page-link">Open Quote Form</a>
-</div>
-</section>
-
-<!-- FOOTER -->
-<div class="footer-section">
-
-<div class="socials">
-<a href="https://www.instagram.com/jlm.valeting"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"></a>
-<a href="https://www.tiktok.com/@jlm.valeting"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png"></a>
-<a href="https://www.facebook.com/profile.php?id=61574434355091"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"></a>
-</div>
-
-<footer>
-<p>© 2026 JLM Valeting. All rights reserved.</p>
-</footer>
-
-</div>
-
-<script>
-const elements=document.querySelectorAll('.card,.gallery img');
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){entry.target.classList.add('show')}
-});
-});
-elements.forEach(el=>observer.observe(el));
-
-document.querySelectorAll(".page-link").forEach(link=>{
-link.addEventListener("click",function(e){
-e.preventDefault();
-document.body.style.opacity="0";
-setTimeout(()=>{window.location=this.href},400);
-});
-});
-</script>
-
-</body>
-</html>
