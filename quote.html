@@ -56,64 +56,74 @@ button.loading .spinner{display:inline-block}
 
 <div class="right">
 
-<form id="quote-form">
+<form id="quote-form" action="https://api.web3forms.com/submit" method="POST">
 
-<input type="text" name="name" placeholder="Your Name" data-fs-field required>
-<span data-fs-error="name"></span>
+<input type="hidden" name="access_key" value="d06c7535-b6cf-427d-b38e-4846f6e1a002">
 
-<input type="email" name="email" placeholder="Your Email" data-fs-field required>
-<span data-fs-error="email"></span>
+<input type="text" name="name" placeholder="Your Name" required>
+<span></span>
 
-<input type="text" name="phone" placeholder="Your Phone Number" data-fs-field>
+<input type="email" name="email" placeholder="Your Email" required>
+<span></span>
 
-<input type="text" name="car" placeholder="Your Address" data-fs-field>
+<input type="text" name="phone" placeholder="Your Phone Number">
 
-<input type="text" name="car" placeholder="Your Postcode" data-fs-field>  
+<input type="text" name="address" placeholder="Your Address">
+
+<input type="text" name="postcode" placeholder="Your Postcode">  
   
-<input type="text" name="car" placeholder="Vehicle Make & Model" data-fs-field>
+<input type="text" name="vehicle" placeholder="Vehicle Make & Model">
 
-<textarea name="message" placeholder="Your Message" data-fs-field></textarea>
-<span data-fs-error="message"></span>
+<textarea name="message" placeholder="Your Message"></textarea>
+<span></span>
 
-<input type="hidden" name="_subject" value="New Quote Request - JLM Valeting">
+<input type="hidden" name="subject" value="New Quote Request - JLM Valeting">
 
-<button type="submit" data-fs-submit-btn>
+<button type="submit">
 <span>Send Message</span>
 <div class="spinner"></div>
 </button>
 
 </form>
 
-<p data-fs-success class="success">Message sent successfully!</p>
-<p data-fs-error class="error"></p>
+<p class="success">Message sent successfully!</p>
+<p class="error"></p>
 
 </div>
 
 </div>
 
 <script>
+const form = document.getElementById("quote-form");
 const btn = document.querySelector("button");
 const successMsg = document.querySelector(".success");
+const errorMsg = document.querySelector(".error");
 
-window.formspree = window.formspree || function () {(formspree.q = formspree.q || []).push(arguments);};
+form.addEventListener("submit", async function(e) {
+  e.preventDefault();
 
-formspree('initForm', {
-  formElement: '#quote-form',
-  formId: 'xvzvdolp',
-  onSubmit: () => {
-    btn.classList.add('loading');
-  },
-  onSuccess: () => {
-    btn.classList.remove('loading');
-    successMsg.classList.add('show');
-  },
-  onError: () => {
-    btn.classList.remove('loading');
+  btn.classList.add("loading");
+
+  const formData = new FormData(form);
+
+  const response = await fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    body: formData
+  });
+
+  const result = await response.json();
+
+  btn.classList.remove("loading");
+
+  if (result.success) {
+    successMsg.classList.add("show");
+    errorMsg.textContent = "";
+    form.reset();
+  } else {
+    errorMsg.textContent = "Something went wrong. Please try again.";
   }
 });
 </script>
-
-<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
 </body>
 </html>
