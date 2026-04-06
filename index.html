@@ -14,6 +14,7 @@ body{
   font-family:'Inter',sans-serif;
   background:var(--dark);
   color:#fff;
+  transition:0.4s;
 }
 
 /* HEADER */
@@ -25,7 +26,7 @@ backdrop-filter:blur(12px);z-index:1000;
 border-bottom:1px solid rgba(255,255,255,0.05)
 }
 
-.logo img{height:75px}
+.logo img{height:75px;transition:0.3s}
 
 nav a{color:#cbd5f5;margin-left:25px;text-decoration:none}
 
@@ -52,7 +53,7 @@ background:linear-gradient(90deg, rgba(2,6,23,0.85) 0%, rgba(2,6,23,0.6) 40%, tr
 
 /* TEXT */
 .hero-title{
-font-size:60px;line-height:1.1;font-weight:700;margin-bottom:15px;
+font-size:70px;line-height:1.1;font-weight:700;margin-bottom:15px;
 }
 
 .hero-title span{
@@ -65,13 +66,75 @@ background:linear-gradient(90deg,#60a5fa,#2563eb);
 
 /* CTA */
 .cta{
-display:inline-block;
+display:inline-block;margin-top:20px;
 padding:14px 26px;
 background:#2563eb;
 border-radius:12px;color:#fff;text-decoration:none;
 }
 
-/* MOBILE FIX */
+/* SECTIONS */
+section{padding:90px 8%}
+h2{font-size:32px;margin-bottom:25px}
+
+/* SERVICES */
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px
+}
+
+.card{
+background:linear-gradient(145deg,#020617,#0f172a);
+padding:25px;
+border-radius:18px;
+border:1px solid rgba(255,255,255,0.05);
+transition:0.3s;
+}
+
+.icon{
+font-size:28px;
+margin-bottom:10px;
+color:#2563eb
+}
+
+/* GALLERY */
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px
+}
+
+.gallery img{
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:14px;
+}
+
+/* CONTACT */
+.contact-box{
+max-width:500px;
+margin:0 auto;
+text-align:center;
+padding:35px;
+background:#0f172a;
+border-radius:18px;
+}
+
+/* FOOTER */
+.footer-section{
+background:#010a1f;
+margin-top:80px;
+padding:40px 0 20px;
+}
+
+footer{
+text-align:center;
+color:#94a3b8;
+font-size:14px;
+}
+
+/* ✅ MOBILE FIX */
 @media(max-width:768px){
 
 header{
@@ -97,7 +160,7 @@ margin-top:8px;
 }
 
 .hero{
-padding-top:180px; /* FIXES BLANK SCREEN */
+padding-top:180px; /* KEY FIX */
 }
 
 .hero-title{
@@ -125,6 +188,7 @@ font-size:40px;
 </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
 <div class="hero-content">
 
@@ -141,6 +205,59 @@ Premium mobile valeting in Exeter & surrounding areas.
 
 </div>
 </section>
+
+<!-- SERVICES -->
+<section id="services">
+<h2>Our Services</h2>
+<div class="services">
+
+<div class="card">
+<div class="icon">🧼</div>
+<h3>Interior Valet</h3>
+<p>A thorough deep clean of all interior surfaces including seats, carpets, plastics, and trims.</p>
+</div>
+
+<div class="card">
+<div class="icon">🚿</div>
+<h3>Exterior Valet</h3>
+<p>Safe hand wash using professional techniques to thoroughly clean your vehicle.</p>
+</div>
+
+<div class="card">
+<div class="icon">🚗</div>
+<h3>Full Valet</h3>
+<p>A complete inside and out transformation for a true showroom result.</p>
+</div>
+
+</div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+<h2>Previous Work</h2>
+<div class="gallery">
+<img src="IMG_9962.jpg">
+<img src="car2.jpg">
+<img src="car3.jpg">
+<img src="car4.jpg">
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<div class="contact-box">
+<h2>Get a Quote</h2>
+<p>Click below to open full quote form</p>
+<a href="quote.html" class="cta">Open Quote Form</a>
+</div>
+</section>
+
+<!-- FOOTER -->
+<div class="footer-section">
+<footer>
+<p>© 2026 JLM Valeting. All rights reserved.</p>
+</footer>
+</div>
 
 </body>
 </html>
