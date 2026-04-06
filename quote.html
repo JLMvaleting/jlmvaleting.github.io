@@ -56,13 +56,29 @@ button.loading .spinner{display:inline-block}
   box-shadow:0 0 15px rgba(37,211,102,0.6);
 }
 
-/* Phone link styling (added) */
-.phone-link{
+/* Call button styling (added) */
+.call-btn{
+  display:none;
+  background:#2563eb;
   color:#fff;
+  padding:12px 18px;
+  border-radius:10px;
   text-decoration:none;
+  font-weight:600;
+  margin-top:10px;
+  text-align:center;
+  transition:0.3s;
 }
-.phone-link:hover{
-  text-decoration:underline;
+.call-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 0 15px rgba(37,99,235,0.6);
+}
+
+/* Show only on mobile */
+@media(max-width:768px){
+  .call-btn{
+    display:inline-block;
+  }
 }
 </style>
 </head>
@@ -79,9 +95,8 @@ button.loading .spinner{display:inline-block}
 
 <div class="box">
 <h3>Phone</h3>
-<p>
-<a href="tel:+447404930763" class="phone-link">07404 930763</a>
-</p>
+<p>07404 930763</p>
+<a href="tel:+447404930763" class="call-btn">📞 Call Now</a>
 </div>
 
 <div class="box">
