@@ -4,6 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JLM Valeting</title>
+
+<!-- ✅ FAVICONS ADDED -->
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="shortcut icon" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/favicon-192.png">
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -107,7 +114,7 @@ transition:0.3s;
 position:relative;
 opacity:0;
 transform:translateY(40px);
-padding-bottom:50px; /* extra space for badge */
+padding-bottom:50px;
 }
 
 .card.show{opacity:1;transform:translateY(0)}
@@ -140,7 +147,7 @@ border-radius:20px;
 font-size:12px;
 }
 
-/* PRICE BADGE (BOTTOM RIGHT NOW) */
+/* PRICE BADGE */
 .price-badge{
 position:absolute;
 bottom:15px;
@@ -218,7 +225,6 @@ font-size:14px;
 
 /* MOBILE */
 @media(max-width:768px){
-
 header{flex-direction:column;padding:10px;}
 .logo img{height:55px;}
 
@@ -239,7 +245,6 @@ background-position: 10% center;
 }
 
 .hero-title{font-size:40px;}
-
 }
 </style>
 </head>
