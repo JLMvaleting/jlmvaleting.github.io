@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy | JLM Valeting</title>
+<meta name="description" content="Read the JLM Valeting privacy policy, including how we collect, use, and protect your personal information.">
+
+<meta name="application-name" content="JLM Valeting">
+<meta name="apple-mobile-web-app-title" content="JLM Valeting">
+
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="shortcut icon" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/favicon-192.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --blue:#2563eb;
+  --blue-light:#60a5fa;
+  --dark:#020617;
+  --panel:#0f172a;
+  --panel-soft:#111c33;
+  --text-soft:#cbd5e1;
+  --line:rgba(255,255,255,0.08);
+  --success:#22c55e;
+}
+
+*{box-sizing:border-box}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:'Manrope',sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(37,99,235,0.22), transparent 28%),
+    radial-gradient(circle at top right, rgba(96,165,250,0.10), transparent 22%),
+    linear-gradient(180deg, #030712 0%, #020617 55%, #010510 100%);
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* HEADER */
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 40px;
+  background:rgba(2,6,23,0.82);
+  backdrop-filter:blur(14px);
+  z-index:1000;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.logo img{
+  height:75px;
+  transition:0.3s;
+}
+
+.logo img:hover{
+  transform:scale(1.05);
+  filter:drop-shadow(0 0 8px rgba(37,99,235,0.5));
+}
+
+nav a{
+  color:#cbd5f5;
+  margin-left:25px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.top-info{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:20px;
+  font-size:13px;
+  color:#cbd5f5;
+}
+
+/* HERO */
+.hero{
+  min-height:56vh;
+  display:flex;
+  align-items:center;
+  padding:0 8%;
+  margin-top:70px;
+  padding-top:120px;
+  position:relative;
+}
+
+.hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg, rgba(2,6,23,0.92) 0%, rgba(2,6,23,0.68) 48%, rgba(2,6,23,0.18) 100%);
+}
+
+.hero-content{
+  position:relative;
+  max-width:760px;
+}
+
+.hero-kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 14px;
+  border-radius:999px;
+  background:rgba(37,99,235,0.14);
+  border:1px solid rgba(96,165,250,0.28);
+  color:#bfdbfe;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  margin-bottom:18px;
+}
+
+.hero-title{
+  font-size:64px;
+  line-height:1.02;
+  font-weight:800;
+  margin:0 0 18px;
+  letter-spacing:-0.04em;
+  text-shadow:0 5px 20px rgba(0,0,0,0.8);
+}
+
+.hero-title span{
+  background:linear-gradient(90deg,#bfdbfe,#60a5fa 45%,#2563eb);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero-sub{
+  color:#dbeafe;
+  font-size:18px;
+  line-height:1.8;
+  max-width:620px;
+  margin:0;
+}
+
+/* PAGE */
+.page-section{
+  padding:0 8% 90px;
+}
+
+.policy-shell{
+  max-width:1100px;
+  margin:0 auto;
+  background:
+    linear-gradient(180deg, rgba(8,14,28,0.94), rgba(8,13,26,0.84)),
+    radial-gradient(circle at top, rgba(96,165,250,0.10), transparent 42%);
+  border:1px solid rgba(255,255,255,0.05);
+  border-radius:30px;
+  padding:34px;
+  box-shadow:0 30px 70px rgba(0,0,0,0.26);
+}
+
+.policy-top{
+  display:grid;
+  grid-template-columns:1.2fr 0.8fr;
+  gap:22px;
+  margin-bottom:24px;
+}
+
+.policy-intro,
+.policy-contact{
+  background:linear-gradient(180deg, rgba(13,20,38,0.96), rgba(7,12,24,0.98));
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:24px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.24);
+}
+
+.policy-intro h2,
+.policy-contact h3,
+.policy-section h3{
+  margin:0 0 12px;
+}
+
+.policy-intro p,
+.policy-contact p,
+.policy-section p,
+.policy-section li{
+  color:var(--text-soft);
+  line-height:1.8;
+  font-size:15px;
+}
+
+.policy-contact a,
+.policy-section a{
+  color:#bfdbfe;
+  text-decoration:none;
+}
+
+.policy-contact a:hover,
+.policy-section a:hover{
+  text-decoration:underline;
+}
+
+.updated-pill{
+  display:inline-flex;
+  align-items:center;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(34,197,94,0.12);
+  border:1px solid rgba(34,197,94,0.22);
+  color:#bbf7d0;
+  font-size:13px;
+  font-weight:700;
+  margin-top:8px;
+}
+
+.policy-grid{
+  display:grid;
+  gap:18px;
+}
+
+.policy-section{
+  background:linear-gradient(180deg, rgba(13,20,38,0.96), rgba(7,12,24,0.98));
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:26px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.24);
+}
+
+.policy-section ul{
+  margin:14px 0 0;
+  padding-left:18px;
+}
+
+.policy-section li{
+  margin-bottom:8px;
+}
+
+.policy-section strong{
+  color:#fff;
+}
+
+.notice-box{
+  margin-top:14px;
+  padding:16px 18px;
+  border-radius:18px;
+  background:rgba(37,99,235,0.10);
+  border:1px solid rgba(96,165,250,0.18);
+}
+
+.notice-box p{
+  margin:0;
+}
+
+/* FOOTER */
+.footer-section{
+  background:#010a1f;
+  margin-top:80px;
+  padding:40px 0 20px;
+  border-top:1px solid rgba(255,255,255,0.05);
+}
+
+.credit{
+  margin-top:25px;
+  text-align:center;
+}
+
+.credit img{
+  height:70px;
+  opacity:0.9;
+  transition:0.3s;
+}
+
+.credit img:hover{
+  opacity:1;
+  transform:scale(1.05);
+}
+
+.socials{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.socials img{
+  width:32px;
+  margin:0 12px;
+  opacity:0.8;
+  transition:0.3s;
+}
+
+.socials img:hover{
+  opacity:1;
+  transform:scale(1.15);
+  filter:drop-shadow(0 0 8px rgba(37,99,235,0.7));
+}
+
+footer{
+  text-align:center;
+  color:#94a3b8;
+  font-size:14px;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .policy-top{
+    grid-template-columns:1fr;
+  }
+
+  .policy-shell{
+    padding:22px;
+  }
+}
+
+@media(max-width:768px){
+  header{
+    flex-direction:column;
+    padding:10px 12px;
+  }
+
+  .logo img{
+    height:55px;
+  }
+
+  .top-info{
+    position:static;
+    transform:none;
+    flex-direction:column;
+    align-items:center;
+    gap:5px;
+    margin-top:5px;
+    text-align:center;
+  }
+
+  nav{
+    margin-top:8px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:14px;
+  }
+
+  nav a{
+    margin-left:0;
+  }
+
+  .hero{
+    padding-top:190px;
+    min-height:auto;
+    padding-bottom:40px;
+  }
+
+  .hero-title{
+    font-size:42px;
+  }
+
+  .hero-sub{
+    font-size:16px;
+  }
+
+  .page-section{
+    padding:0 6% 75px;
+  }
+
+  .policy-shell{
+    padding:16px;
+    border-radius:22px;
+  }
+
+  .policy-intro,
+  .policy-contact,
+  .policy-section{
+    padding:20px;
+    border-radius:20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo"><img src="logo.png" alt="JLM Valeting logo"></div>
+<div class="top-info">
+<span>📧 contact@jlmvaleting.co.uk</span>
+<span>📍 Exeter, Devon</span>
+</div>
+<nav>
+<a href="index.html">Home</a>
+<a href="index.html#services">Services</a>
+<a href="index.html#coverage">Coverage</a>
+<a href="quote.html">Quote</a>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-content">
+<div class="hero-kicker">Privacy Policy</div>
+<h1 class="hero-title">Your Data,<br><span>Handled Properly.</span></h1>
+<p class="hero-sub">
+This page explains what information JLM Valeting may collect, how it is used, and how we keep it protected when you contact us or use our services.
+</p>
+</div>
+</section>
+
+<section class="page-section">
+<div class="policy-shell">
+
+<div class="policy-top">
+<div class="policy-intro">
+<h2>Privacy at JLM Valeting</h2>
+<p>
+JLM Valeting is committed to protecting your personal information and handling it responsibly. We only collect the information needed to respond to enquiries, provide quotes, book services, and operate our website effectively.
+</p>
+<div class="updated-pill">Last updated: 14/04/2026</div>
+</div>
+
+<div class="policy-contact">
+<h3>Data Controller</h3>
+<p><strong>JLM Valeting</strong></p>
+<p>Email: <a href="mailto:contact@jlmvaleting.co.uk">contact@jlmvaleting.co.uk</a></p>
+<p>Website: <a href="https://jlmvaleting.co.uk">jlmvaleting.co.uk</a></p>
+<p>Service area: Devon and parts of Somerset, including Taunton.</p>
+</div>
+</div>
+
+<div class="policy-grid">
+
+<div class="policy-section">
+<h3>1. What We Collect</h3>
+<p>We only collect personal information that helps us run our business and deliver our services. This may include:</p>
+<ul>
+<li>Your name, email address, phone number, and address</li>
+<li>Booking and quote details</li>
+<li>Location details for mobile valeting appointments</li>
+<li>Vehicle information relevant to the service</li>
+<li>Basic website usage data such as browser type, device type, pages visited, and time spent on the site</li>
+</ul>
+</div>
+
+<div class="policy-section">
+<h3>2. How We Use Your Information</h3>
+<p>We use your information to:</p>
+<ul>
+<li>Reply to enquiries and provide quotes</li>
+<li>Book and carry out valeting services</li>
+<li>Contact you about appointments or service updates</li>
+<li>Improve our website and customer experience</li>
+<li>Meet legal and business record-keeping obligations</li>
+</ul>
+</div>
+
+<div class="policy-section">
+<h3>3. Photos and Videos</h3>
+<p>
+We may sometimes take photos or videos of vehicles we work on for use on our website or social media pages. Where identifying details are visible, we will only use that content with your permission.
+</p>
+</div>
+
+<div class="policy-section">
+<h3>4. Legal Basis for Processing</h3>
+<p>We process personal data under one or more of the following lawful bases:</p>
+<ul>
+<li><strong>Consent</strong> for optional uses such as promotional content</li>
+<li><strong>Contract</strong> where processing is needed to provide a requested service</li>
+<li><strong>Legitimate interests</strong> for running and improving our business</li>
+<li><strong>Legal obligation</strong> where we are required to keep or share information by law</li>
+</ul>
+</div>
+
+<div class="policy-section">
+<h3>5. Sharing Your Information</h3>
+<p>
+We do not sell or rent your personal data. We may share it only where necessary with trusted service providers, or where required by law.
+</p>
+</div>
+
+<div class="policy-section">
+<h3>6. Cookies and Website Data</h3>
+<p>
+Our website may use cookies or similar technologies to support website functionality and understand how visitors use the site. You can control cookies through your browser settings, although disabling them may affect how the site works.
+</p>
+</div>
+
+<div class="policy-section">
+<h3>7. Data Retention and Security</h3>
+<p>
+We keep personal data only for as long as necessary for customer service, business records, and legal obligations. We take reasonable steps to protect your data and limit access to authorised individuals only.
+</p>
+<div class="notice-box">
+<p>No internet transmission or storage system can ever be guaranteed 100% secure, but we take sensible precautions to keep your information safe.</p>
+</div>
+</div>
+
+<div class="policy-section">
+<h3>8. Your Rights</h3>
+<p>Under UK data protection law, you may have the right to:</p>
+<ul>
+<li>Access the personal data we hold about you</li>
+<li>Correct inaccurate information</li>
+<li>Request deletion of your data</li>
+<li>Restrict or object to certain processing</li>
+<li>Withdraw consent where consent has been relied upon</li>
+</ul>
+<p>
+To make a request, email <a href="mailto:contact@jlmvaleting.co.uk">contact@jlmvaleting.co.uk</a>.
+</p>
+</div>
+
+<div class="policy-section">
+<h3>9. Third-Party Links</h3>
+<p>
+Our website may contain links to other websites. We are not responsible for the privacy practices of external sites, so we recommend reviewing their policies separately.
+</p>
+</div>
+
+<div class="policy-section">
+<h3>10. Updates and Complaints</h3>
+<p>
+We may update this policy from time to time to reflect changes to our business or legal requirements. If you have concerns about how your data is handled, please contact us first.
+</p>
+<p>
+You also have the right to complain to the Information Commissioner's Office at <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer">ico.org.uk</a>.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<div class="footer-section">
+
+<div class="socials">
+<a href="https://www.instagram.com/jlm.valeting"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+<a href="https://www.tiktok.com/@jlm.valeting"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok"></a>
+<a href="https://www.facebook.com/profile.php?id=61574434355091"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+</div>
+
+<footer>
+<p>© 2026 JLM Valeting. All rights reserved.</p>
+
+<div class="credit">
+<img src="logo2.png" alt="Vernon Web Design">
+</div>
+</footer>
+
+</div>
+
+</body>
+</html>
