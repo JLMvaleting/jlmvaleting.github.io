@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -149,6 +150,12 @@ nav a{
   animation:fadeUp 1s ease forwards;
   animation-delay:0.8s;
 }
+.fade-up-delay3{
+  opacity:0;
+  transform:translateY(30px);
+  animation:fadeUp 1s ease forwards;
+  animation-delay:1.05s;
+}
 @keyframes fadeUp{
   to{
     opacity:1;
@@ -177,6 +184,18 @@ nav a{
   font-size:18px;
   margin-bottom:25px;
   max-width:540px;
+}
+
+.hero-selling-point{
+  margin-top:18px;
+  font-size:28px;
+  font-weight:800;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:#ffffff;
+  text-shadow:
+    0 0 12px rgba(96,165,250,0.35),
+    0 4px 18px rgba(0,0,0,0.75);
 }
 
 /* CTA */
@@ -821,6 +840,11 @@ body.modal-open{
     font-size:16px;
   }
 
+  .hero-selling-point{
+    font-size:20px;
+    letter-spacing:0.06em;
+  }
+
   section{
     padding:75px 6%;
   }
@@ -951,6 +975,8 @@ Premium mobile valeting in Devon and surrounding areas.
 </p>
 
 <a href="quote.html" class="cta fade-up-delay2 page-link">Get a Quote Now</a>
+
+<div class="hero-selling-point fade-up-delay3">We Come To You</div>
 
 </div>
 </section>
@@ -1341,3 +1367,4 @@ postcodeForm.addEventListener("submit", e=>{
 
 </body>
 </html>
+```
